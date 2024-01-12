@@ -1,0 +1,6 @@
+name: BasicQuests
+main: gg.dawson.quests.bukkit.BasicQuests
+author: Dawson
+version: ${version}
+description: ${description}
+api-version: 1.13

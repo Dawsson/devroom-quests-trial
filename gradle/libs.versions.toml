@@ -1,0 +1,35 @@
+metadata.format.version = "1.1"
+
+[versions]
+
+paperweight = "1.5.11"
+guava = "17.0"
+run-paper = "2.2.2"
+twilight = "1.0.35"
+lamp = "3.1.8"
+paper = "1.20.4-R0.1-SNAPSHOT"
+kotlin = "2.0.0-Beta2"
+logback = "1.4.14"
+coroutines = "1.8.0-RC2"
+dotenv-kotlin = "6.4.1"
+logging = "5.1.0"
+kmongo = "4.11.0"
+
+[libraries]
+
+paper =  { module = "io.papermc.paper:paper-api", version.ref = "paper"}
+twilight = { module = "gg.flyte:twilight", version.ref = "twilight" }
+
+lamp-common = { module = "com.github.Revxrsal.Lamp:common", version.ref = "lamp" }
+lamp-bukkit = { module = "com.github.Revxrsal.Lamp:bukkit", version.ref = "lamp" }
+
+dotenv-kotlin = { module = "io.github.cdimascio:dotenv-kotlin", version.ref = "dotenv-kotlin" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+logging = { module = "io.github.oshai:kotlin-logging", version.ref = "logging" }
+kmongo = { module = "org.litote.kmongo:kmongo-coroutine-serialization", version.ref = "kmongo" }
+
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+[plugins]
+run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
