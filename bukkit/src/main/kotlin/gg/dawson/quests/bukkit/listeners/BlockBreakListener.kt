@@ -1,7 +1,7 @@
 package gg.dawson.quests.bukkit.listeners
 
 import gg.dawson.quests.bukkit.BasicQuests
-import gg.dawson.quests.api.quests.model.QuestType
+import gg.dawson.quests.bukkit.QuestTypes
 import gg.flyte.twilight.event.event
 import net.kyori.adventure.text.Component.text
 import org.bukkit.Bukkit
@@ -12,7 +12,7 @@ class BlockBreakListener : Listener {
     init {
         event<BlockBreakEvent> {
             BasicQuests.questAPI.getQuests(player)
-                .filter { quest -> quest.type == QuestType.BLOCK_BREAK }
+                .filter { quest -> quest.type == QuestTypes.BLOCK_BREAKER }
                 .filter { quest -> !quest.isCompleted() }
                 .forEach { quest ->
                     BasicQuests.questAPI.incrementProgress(player, quest) { success ->

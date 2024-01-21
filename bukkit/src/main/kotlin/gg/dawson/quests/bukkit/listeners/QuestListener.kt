@@ -11,6 +11,8 @@ class QuestListener : Listener {
 
     init {
         event<QuestCompleteEvent> {
+            val player = getPlayer() ?: return@event
+
             Bukkit.broadcast(
                 text("Congrats to ")
                     .append(player.displayName().color(NamedTextColor.BLUE))

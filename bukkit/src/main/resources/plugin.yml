@@ -4,3 +4,5 @@ author: Dawson
 version: ${version}
 description: ${description}
 api-version: 1.13
+libraries:
+  - "org.jetbrains.kotlin:kotlin-reflect:1.9.20"

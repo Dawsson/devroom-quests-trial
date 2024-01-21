@@ -8,5 +8,6 @@ interface QuestDatabase {
 
     suspend fun getQuests(playerUUID: String): Flow<Quest>
     suspend fun saveQuests(playerUUID: String, quests: List<Quest>)
+    suspend fun saveQuest(playerUUID: String, quest: Quest)
 
 }

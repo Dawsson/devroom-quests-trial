@@ -9,10 +9,11 @@ data class Quest(
     val name: String,
     val level: Int,
     val description: String,
-    val type: QuestType,
+    val type: String,
     val maxCount: Int,
     var currentCount: Int = 0,
     var completionDate: Long? = null,
+    val shouldCache: Boolean = true,
 ) {
     fun isCompleted() = completionDate != null
 }

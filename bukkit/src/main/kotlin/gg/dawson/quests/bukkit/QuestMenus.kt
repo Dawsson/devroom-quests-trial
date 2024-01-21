@@ -20,7 +20,7 @@ object QuestMenus {
 
         return GuiBuilder(
             text("Quests"),
-            ceil(quests.size / 9.0).toInt() * 9,
+            (ceil(quests.size / 9.0).toInt() * 9).coerceAtLeast(9),
         ) {
             inventory.apply {
                 quests

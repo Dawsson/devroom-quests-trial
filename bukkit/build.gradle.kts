@@ -17,6 +17,7 @@ dependencies {
     implementation(libs.kmongo)
 
     implementation(libs.kotlinx.coroutines.core)
+    implementation(kotlin("reflect"))
 }
 
 

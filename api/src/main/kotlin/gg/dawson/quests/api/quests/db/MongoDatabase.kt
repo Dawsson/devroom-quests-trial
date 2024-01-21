@@ -2,16 +2,11 @@ package gg.dawson.quests.api.quests.db
 
 import gg.dawson.quests.api.quests.model.Quest
 import gg.flyte.twilight.gson.GSON
-import gg.flyte.twilight.gson.toJson
 import kotlinx.coroutines.flow.Flow
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonEncoder
-import kotlinx.serialization.json.encodeToStream
 import org.bson.Document
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 import org.litote.kmongo.serialization.SerializationClassMappingTypeService
-import java.util.*
 
 class MongoDatabase(
     mongoURI: String
@@ -43,6 +38,15 @@ class MongoDatabase(
                 if (findOneById(quest.id) != null) replaceOneById(quest.id, quest.toDocument())
                 else insertOne(quest.toDocument())
             }
+        }
+    }
+
+    override suspend fun saveQuest(playerUUID: String, quest: Quest) {
+        if (!database.listCollectionNames().contains(playerUUID)) database.createCollection(playerUUID)
+
+        database.getCollection<Document>(playerUUID).apply {
+            if (findOneById(quest.id) != null) replaceOneById(quest.id, quest.toDocument())
+            else insertOne(quest.toDocument())
         }
     }
 

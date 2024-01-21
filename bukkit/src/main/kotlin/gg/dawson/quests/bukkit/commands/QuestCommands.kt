@@ -2,7 +2,7 @@ package gg.dawson.quests.bukkit.commands
 
 import gg.dawson.quests.bukkit.BasicQuests
 import gg.dawson.quests.bukkit.QuestMenus
-import gg.dawson.quests.api.quests.DefaultQuest
+import gg.dawson.quests.bukkit.DefaultQuest
 import gg.flyte.twilight.gson.GSON
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.format.NamedTextColor
